@@ -1,0 +1,31 @@
+### Get all values
+GET http://localhost:50912/api/values
+Accept: application/json
+
+###
+
+### Get value by id
+GET http://localhost:50912/api/values/5
+Accept: application/json
+
+###
+
+### Create a new value
+POST http://localhost:50912/api/values
+Content-Type: application/json
+
+"value3"
+
+###
+
+### Update a value
+PUT http://localhost:50912/api/values/5
+Content-Type: application/json
+
+"updated value"
+
+###
+
+### Delete a value
+DELETE http://localhost:50912/api/values/5
+Accept: application/json
