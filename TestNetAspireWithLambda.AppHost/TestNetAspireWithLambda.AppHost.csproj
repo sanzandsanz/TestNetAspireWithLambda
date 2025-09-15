@@ -12,10 +12,12 @@
   <ItemGroup>
     <PackageReference Include="Aspire.Hosting.AppHost" Version="9.4.2" />
     <PackageReference Include="Aspire.Hosting.AWS" Version="9.2.6" />
+    <PackageReference Include="Aspire.Hosting.Redis" Version="9.4.2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\LambdaCoreWebAPI\src\LambdaCoreWebAPI\LambdaCoreWebAPI.csproj" />
+    <ProjectReference Include="..\SampleWebAPI\SampleWebAPI.csproj" />
   </ItemGroup>
 
 </Project>

@@ -16,7 +16,7 @@ builder.Build().Run();
 ```
 
 
-## Important Things to consider
+## Lambda Core Web API - Important Things to consider
 
 1. We will need to update LambdaEntryPoint.cs to inherit from `Amazon.Lambda.AspNetCoreServer.APIGatewayHttpApiV2ProxyFunction` instead of `Amazon.Lambda.AspNetCoreServer.APIGatewayProxyFunction`.
 2. This is because our Aspire host is configure to use `APIGatewayType.HttpV2` (Http API v2.0)
@@ -28,3 +28,7 @@ builder.AddAWSAPIGatewayEmulator("APIGatewayEmulator", Aspire.Hosting.AWS.Lambda
 4. We are using `/{proxy+}` to handle all kinds of GET Requests. If you want to handle other HTTP methods, you will need to add them as well.
 
 5. When we spin the .Net Aspire, now the AWS Gateway Emulator will be expose on http://localhost:50912/ and it can now handle the request coming to the LambdaCoreWebAPI
+
+
+
+## Sample Web API - Import things to consider for Redis
