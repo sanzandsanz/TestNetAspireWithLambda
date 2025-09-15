@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddOpenApi();
 
 // Add Redis Cache Service
-builder.AddRedisClient("redis");
+builder.AddRedisClient("sanz-redis");
 builder.Services.AddScoped<RedisCacheService>();
 
 // Add Aspire Service Defaults 
