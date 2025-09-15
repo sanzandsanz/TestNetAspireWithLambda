@@ -1,8 +1,9 @@
-@SampleWebAPI_HostAddress = http://localhost:5190
+@SampleWebAPI_HostAddress = https://localhost:5050
 
-GET {{SampleWebAPI_HostAddress}}/weatherforecast/
+### Sample TEST API
+GET {{ SampleWebAPI_HostAddress}}/test/
 Accept: application/json
 
-### Get with Redis enable
+### Get Weather Forecast with Redis Enable
 GET {{SampleWebAPI_HostAddress}}/weatherforecast-redis/
 Accept: application/json

@@ -1,7 +1,6 @@
-
 using Microsoft.AspNetCore.Mvc;
 using SampleWebAPI.Services;
-using Aspire.StackExchange.Redis;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -30,20 +29,7 @@ var summaries = new[]
     "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
 };
 
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast");
-
+app.MapGet("/test", () => "Hello World!");
 
 app.MapGet("/weatherforecast-redis", async ([FromServices] RedisCacheService redisService) =>
 {
@@ -66,8 +52,8 @@ app.MapGet("/weatherforecast-redis", async ([FromServices] RedisCacheService red
             ))
         .ToArray();
     
-    // add sleep for 30seconds
-    await Task.Delay(30000);
+    // add sleep for 3seconds
+    await Task.Delay(3000);
     
     await redisService.SaveAsync("redis-key", forecast, TimeSpan.FromSeconds(10));
 
